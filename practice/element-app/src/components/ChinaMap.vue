@@ -190,7 +190,7 @@ export default {
     makeSeries: function() {
       var that = this;
       var series = [];
-      console.log(that);
+  
       let BJData = [
         [{ name: "北京" }, { name: "上海", value: 95 }],
         [{ name: "北京" }, { name: "广州", value: 90 }],
@@ -349,6 +349,3 @@ export default {
   height calc(100% - 62px) !important;
 
 </style>
-
-
-

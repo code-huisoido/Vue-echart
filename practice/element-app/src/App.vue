@@ -20,7 +20,10 @@
         <router-link to="/promise">Go to promise</router-link>
       </el-menu-item>
       <el-menu-item index="5">
-        <router-link to="/map">Go to map</router-link>
+        <router-link to="/china-map">Go to China-map</router-link>
+      </el-menu-item>
+      <el-menu-item index="6">
+        <router-link to="/hk-map">Go to Hk-map</router-link>
       </el-menu-item>
     </el-menu>
 
@@ -62,4 +65,8 @@ html, body, #app {
     }
   }
 }
+
+#map 
+  width 100% !important;
+  height calc(100% - 62px) !important;
 </style>

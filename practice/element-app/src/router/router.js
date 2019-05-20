@@ -20,9 +20,13 @@ const route = new Router({
         name: 'promise',
         component: () => import('../components/Promise.vue')
     }, {
-        path: '/map',
-        name: 'map',
-        component: () => import('../components/Map.vue')
+        path: '/china-map',
+        name: 'china-map',
+        component: () => import('../components/ChinaMap.vue')
+    }, {
+        path: '/hk-map',
+        name: 'hk-map',
+        component: () => import('../components/HKMap.vue')
     }]
 })
 
