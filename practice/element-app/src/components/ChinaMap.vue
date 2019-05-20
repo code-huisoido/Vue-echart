@@ -173,8 +173,7 @@ export default {
     };
   },
   components: {
-    echarts,
-    axios
+   
   },
   methods: {
     initEchart: function() {

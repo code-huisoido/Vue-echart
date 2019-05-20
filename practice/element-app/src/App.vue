@@ -25,6 +25,9 @@
       <el-menu-item index="6">
         <router-link to="/hk-map">Go to Hk-map</router-link>
       </el-menu-item>
+      <el-menu-item index="7">
+        <router-link to="/scatter-map">Go to scatter-map</router-link>
+      </el-menu-item>
     </el-menu>
 
     <router-view></router-view>

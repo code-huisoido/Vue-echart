@@ -27,6 +27,10 @@ const route = new Router({
         path: '/hk-map',
         name: 'hk-map',
         component: () => import('../components/HKMap.vue')
+    }, {
+        path: '/scatter-map',
+        name: 'scatter-map',
+        component: () => import('../components/ScatterMap.vue')
     }]
 })
 

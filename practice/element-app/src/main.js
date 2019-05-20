@@ -7,6 +7,7 @@ import store from './store/index'
 import { Button, Select, Menu, Submenu, MenuItem, MenuItemGroup, Row, Col} from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css';
 import echarts from 'echarts';
+import 'echarts/extension/bmap/bmap';
 import axios from 'axios';
 
 Vue.config.productionTip = false
