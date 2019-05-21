@@ -582,54 +582,38 @@ export default {
   },
 
   methods: {
-    changeData1: function() {
-      let data = this.map_data;
-      var res = [];
-      for (var i = 0; i < data.length; i++) {
-        
-        let geoCoord = this.geoCoordMap[data[i].name];
-        if (geoCoord) {
-          res.push({
-            name: data[i].name,
-            value: geoCoord.concat(data[i].value)
-          });
-        }
-      }
-      this.option.series[0].data = res;
+    changeData: function(optionData, mapData) {
+      optionData.data = this.convertData(mapData);
     },
-    changeData2: function() {
-      let data = this.map_data
-        .sort(function(a, b) {
-          return b.value - a.value;
-        })
-        .slice(0, 6);
-      var res = [];
-      for (var i = 0; i < data.length; i++) {
-    
-        let geoCoord = this.geoCoordMap[data[i].name];
-        if (geoCoord) {
-          res.push({
-            name: data[i].name,
-            value: geoCoord.concat(data[i].value)
-          });
-        }
-      }
-      this.option.series[1].data = res;
-    },
-    initMap: function() {
-      this.changeData1();
-      this.changeData2();
-      this.$nextTick(() => {
+    initMap: function() { 
         this.chart = this.$echarts.init(document.getElementById("map"));
-        
         this.chart.setOption(this.option);
-      });
+     
     },
     convertData: function(data) {
-     
+      let res = [];
+      for (var i = 0; i < data.length; i++) {
+        let geoCoord = this.geoCoordMap[data[i].name];
+        if (geoCoord) {
+          res.push({
+            name: data[i].name,
+            value: geoCoord.concat(data[i].value)
+          });
+        }
+      }
+      return res;
     }
   },
   mounted() {
+    this.changeData(this.option.series[0], this.map_data);
+    this.changeData(
+        this.option.series[1],
+        this.map_data
+          .sort(function(a, b) {
+            return b.value - a.value;
+          })
+          .slice(0, 6)
+      );
     this.$nextTick(() => {
       this.initMap();
     });
