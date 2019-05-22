@@ -4,6 +4,10 @@ const route = new Router({
     mode: 'history',
     base: process.env.BASE_URL,
     routes: [{
+        path: '/',
+        name: 'index',
+        component: () => import('../components/HelloWorld.vue')
+    },{
         path: '/hello',
         name: 'hello',
         component: () => import('../components/HelloWorld.vue')

@@ -620,3 +620,8 @@ export default {
   }
 };
 </script>
+
+<style lang="stylus" scoped>
+>>>.anchorBL
+  display none !important
+</style>

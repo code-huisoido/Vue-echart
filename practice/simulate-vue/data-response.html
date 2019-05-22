@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>数据响应原理示例</title>
+</head>
+<body>
+    <div>
+        <input type="text" id="input-msg">
+        <p id="output-msg">
+    </div>
+</body>
+
+<script>
+    var inputMsg = document.getElementById('input-msg'),
+        outputMsg = document.getElementById('output-msg');
+
+    var obj = {
+        msg: 'hello'
+    };
+
+    var key = 'msg';
+
+    var val = obj[key];
+
+    Object.defineProperty(obj, key, {
+        enumerable: true,
+        configurable: true,
+        set: function(newValue) {
+            val = newValue;
+            outputMsg.innerText = obj[key];
+        },
+        get: function() {
+            console.log('getter');
+            return val;
+        }
+    });
+
+    inputMsg.addEventListener('input', function (event) {
+        var newVal = event.target.value;
+        obj[key] = newVal;
+    });
+
+</script>
+</html>

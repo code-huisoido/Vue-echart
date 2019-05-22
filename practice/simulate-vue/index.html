@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>模拟vue</title>
+</head>
+
+<body>
+    <script src="./dist/mvue.js">
+    </script>
+
+    <div id="app">
+        <input type="text" v-model="msg">
+        <div>
+            <p>{{msg}}</p>
+            <p>{{msg}}</p>
+            <p>{{msg}}</p>
+        </div>
+    </div>
+
+    <script>
+        var vm = new MVue({
+            el: '#app',
+            data: {
+                msg: 'hello'
+            }
+        })
+    </script>
+</body>
+
+</html>
